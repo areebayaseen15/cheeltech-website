@@ -2,6 +2,7 @@ import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // ✅ Webpack alias
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -10,7 +11,7 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  // 👇 Add this images configuration
+  // ✅ Images remote patterns
   images: {
     remotePatterns: [
       {
@@ -20,6 +21,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  // ✅ Turbopack fix for Next.js 16+
+  turbopack: {},
+
+  reactStrictMode: true, // optional but recommended
 };
 
 export default nextConfig;

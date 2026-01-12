@@ -1,60 +1,59 @@
-"use client";
+"use client"
+import { contactBgAnimation, fadeAnimation } from '@/hooks/useGsapAnimation';
+import { useCursorAndBackground } from '@/hooks/useCursorAndBackground';
+import ContactFormArea from '@/components/contacts/ContactFormArea';
+import BackToTop from '@/components/shared/BackToTop/BackToTop';
 
-import React, { useEffect } from "react";
-
-// Components
-import BackToTop from "@/components/shared/BackToTop/BackToTop";
-import ContactFormArea from "@/components/contacts/ContactFormArea";
-import ContactHero from "@/components/contacts/ContactHero";
-import InnerMapArea from "@/components/contacts/InnerMapArea";
-import ContactUsAbout from "@/components/about/ContactUsAbout";
-import ITSolutionHeader from "@/layouts/headers/ITSolutionHeader";
-import ITSolutionFooter from "@/layouts/footers/ITSolutionFooter";
-
-// Hooks
-import { useCursorAndBackground } from "@/hooks/useCursorAndBackground";
-import useScrollSmooth from "@/hooks/useScrollSmooth";
-import { fadeAnimation, contactBgAnimation } from "@/hooks/useGsapAnimation";
+import InnerMapArea from '@/components/contacts/InnerMapArea';
+import ContactHero from '@/components/contacts/ContactHero';
+import useScrollSmooth from '@/hooks/useScrollSmooth';
+import { useGSAP } from '@gsap/react';
+import ITSolutionFooter from '@/layouts/footers/ITSolutionFooter';
+import ITSolutionHeader from '@/layouts/headers/ITSolutionHeader';
+import ContactUsAbout from '@/components/about/ContactUsAbout';
 
 const ContactMain = () => {
-  // Client-only hooks
-  useCursorAndBackground({ bgColor: "#fff" });
-  useScrollSmooth();
+    // Initialize custom cursor and background styles
+    useCursorAndBackground({ bgColor: "#fff" });
 
-  // Run GSAP animations safely
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      fadeAnimation();
-      contactBgAnimation();
-    }, 100);
+    // Enable smooth scroll animations
+    useScrollSmooth();
 
-    return () => clearTimeout(timer);
-  }, []);
+    useGSAP(() => {
+        const timer = setTimeout(() => {
+            fadeAnimation();
+            contactBgAnimation()
+        }, 100)
+        return () => clearTimeout(timer);
+    });
 
-  return (
-    <>
-      {/* Custom Cursor */}
-      <div id="magic-cursor" className="cursor-white-bg">
-        <div id="ball"></div>
-      </div>
+    return (
+        <>
+            <div id="magic-cursor">
+                <div id="ball"></div>
+            </div>
 
-      {/* Global Components */}
-      <BackToTop />
-      <ITSolutionHeader />
+            {/* Global Components */}
+            <BackToTop />
+            {/* <InnerPageHeader /> */}
+            <ITSolutionHeader/>
 
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <main>
-            <ContactHero />
-            <InnerMapArea />
-            <ContactFormArea />
-            <ContactUsAbout />
-          </main>
-          <ITSolutionFooter />
-        </div>
-      </div>
-    </>
-  );
+            <div id="smooth-wrapper">
+                <div id="smooth-content">
+                    {/* Main Content Sections */}
+                    <main>
+                        <ContactHero />
+                        <InnerMapArea />
+                        <ContactFormArea />
+                                  <ContactUsAbout />
+                        {/* <ContactLocationArea /> */}
+                    </main>
+                    {/* <HomeMainFooter /> */}
+                    <ITSolutionFooter />
+                </div>
+            </div>
+        </>
+    );
 };
 
 export default ContactMain;
