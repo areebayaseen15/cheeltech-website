@@ -1,0 +1,409 @@
+@forward '../../public/assets/css/bootstrap.css'; 
+@forward '../../public/assets/css/spacing.css';
+@forward '../../public/assets/css/font-awesome-pro.css'; 
+@forward '../../public/assets/scss/main.scss';
+@import 'react-photo-view/dist/react-photo-view.css';
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+/* Video modal style */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9); 
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal-container {
+  width: 90%;
+  max-width: 1200px; 
+  position: relative;
+}
+
+.video-modal-iframe {
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.video-modal-close:hover {
+  transform: scale(1.2);
+}
+
+/* Click outside to close */
+.video-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+// custom classes add
+.blue-bg,
+.paste-bg-2,
+.crp-footer-bg,
+.tp-btn-black.btn-red-bg .tp-btn-black-text ,
+.tp-section-subtitle.pre::before,
+.tp-work-number span,
+.tp-contact-map-icon span,
+.tp-contact-form-btn button,
+.tp-service-4-process-video .dgm-testimonial-playbtn,
+.agntix-light .crp-about-btn-box .tp-btn-yellow-green{
+   background: blue !important;
+    background-color: #5757ff !important;
+}
+.crp-about-exp,
+.it-benifit-icon::after,
+.ar-about-funfact-color .crp-hero-funfact-line::before,
+.ar-about-funfact-color .crp-hero-funfact-line,
+.tp-btn-black.btn-red-bg .tp-btn-black-circle {
+      background-color: royalblue;
+}
+
+.agntix-light .crp-service-icon span,
+.it-footer-style .crp-footer-big-text {
+    background-color: rgb(11, 11, 185);
+}
+.box .eye,
+.crp-hero-funfact-line::before,
+.crp-hero-funfact-line{
+  background-color: #dbdbf7;
+  background: #dbdbf7;
+  
+}
+
+.agntix-light .tp-section-title-teko{
+  color: #5757ff;
+}
+.studio-service-item-wrap .tp-award-item::after {
+    background-color: blue;
+}
+.crp-about-exp-item,
+.agntix-light .tp-section-subtitle-teko,
+.agntix-light .tp-section-subtitle-teko i,
+.crp-about-exp-item{
+  color: #333 !important;
+}
+.tp-line-white.cream,
+.agntix-light .tp-section-title-teko span {
+    color: #333 !important;
+}
+
+.crp-about-exp-item i,
+.crp-about-exp-item span{
+  color: #fff !important;
+}
+
+.about-benefits p {
+    font-size: 16px;
+    color: #DBDBF7;
+    width: 85%;
+}
+
+.about-benefit-title {
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 0.5;
+    color: #fff;
+    font-family: "keko" , sans-serif;
+}
+
+.about-benifit-bg{
+  padding: 100px;
+  width: 100%;
+  background: royalblue !important;
+  border-radius: 50px;
+}
+
+.container.benefit-container {
+    max-width: 90%;
+}
+.tp-benefits-heading p{
+  color: #dbdbf7;
+  max-width: 90%;
+}
+
+.app-price-box.app-price-service .crp-price-item.active .animated-border-box.radius-style-2 .tp-btn-gradient {
+    background: none;
+    color: white !important;
+    background-color: blue;
+}
+
+
+.dgm-service-wrap.dgm-service-white .dgm-service-item:hover .dgm-service-content-right a {
+    border-color: blue;
+}
+.dgm-service-item:hover .dgm-service-link {
+    // transform: translateX(-30px);
+    color: white;
+    background-color: blue;
+}
+// .dgm-service-content-right.black-text .dgm-service-link {
+//     color: #111013;
+//     border-color: rgba(17, 16, 19, 0.2);
+// }
+
+
+
+
+// chatbot css
+/* Floating button */
+.chat-launcher {
+  position: fixed;
+  bottom: 12%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.chat-launcher-bubble {
+  background: white;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 7px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  font-size: 16px;
+  min-width: 150px;
+}
+
+
+
+/* Chat popup */
+.chat-popup {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 340px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+/* Header */
+.chat-header {
+  // background-color: #ebebff;
+  background-color: blue;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: white;
+  // align-items: center;
+}
+.chat-header h5 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+    color: white;
+}
+.chat-header p{
+  font-size: 14px;
+    color: white;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Chat body */
+.chat-body {
+  padding: 10px 15px;
+  height: 330px;
+  overflow-y: auto;
+  background: white;
+}
+.chat-msg {
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+.chat-msg.user {
+  background: blue;
+  color: white;
+  margin-left: auto;
+  max-width: fit-content;
+  padding: 2% 3%;
+}
+.chat-msg.bot {
+  background:whitesmoke;
+  color: #333;
+  margin-right: auto;
+}
+
+/* Input area */
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+  background: white;
+}
+.chat-input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+.chat-input-area button {
+  background:blue;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.chat-input-area button:hover {
+  background: blue;
+}
+.tp-section-title-clash{
+ color: #000 !important;
+}
+.material-icons{
+background-color: blue;
+padding: 10%;
+border-radius: 50%;
+transition: 3s ease-in-out;
+}
+.material-icons:hover{
+  scale: 1.1;
+}
+
+//home page our process steps
+    .it-faq-wrap {
+        margin-left: 70px;
+    }
+
+    .it-faq-wrap .accordion-items:not(:last-child) {
+    margin-bottom: 20px;
+}
+    .it-faq-wrap .accordion-items {
+        padding-left: 50px;
+    }
+
+    .it-faq-wrap .accordion-body {
+    padding: 0;
+    padding: 16px 0;
+}
+
+
+    .studio-service-item-wrap .tp-award-text {
+        font-size: 24px;
+        word-spacing: 1.5;
+        letter-spacing: 1.5;
+    }
+    .crp-footer-big-text span span {
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+    .crp-footer-big-text {
+        font-size: 100px;
+    }
+
+    .creative-brand-top-text {
+
+    font-size: 32px;
+    margin-bottom: 40px;
+    }
+
+
+    // collaborators
+
+    // .des-brand-area{
+    //   padding-top: 140px;
+    // }
+
+    .tp-section-title-mango {
+    font-weight: 600;
+    font-size: 82px;
+  }
+
+  .agntix-light .des-brand-item.black-style .des-brand-item-inner {
+    background-color: lightgrey;
+}
+
+.des-brand-item-inner img{
+  width: 280px !important;
+}
+
+.des-brand-item-inner {
+
+    padding: 70px;
+}
+
+// services
+.studio-service-area{
+  padding-top: 40px;
+}
+// .tp-section-title-clash {
+//         font-size: 82px;
+//     }
+
+.it-about-info-item {
+
+    background: #7da9e8;
+}
+.it-brand-style .tp-brand-title ,
+.it-brand-style .tp-brand-style-2 .tp-brand-title {
+    color: #fff;
+}
+// .it-about-title-box p {
+//   font-size: 20px;
+// }
+
+.it-about-shape-2{
+  z-index: 0;
+}
+.studio-service-item-wrap .tp-award-text{
+  font-size: 36px;
+}
+// .crp-footer-big-text {
+//     font-size: 150px;
+// }
+.crp-footer-big-text i {
+
+    // width: 70px;
+    // height: 70px;
+    margin-left: 50px;
+  
+}
+.crp-about-3-hero-ptb {
+    padding-top: 200px !important;
+    padding-bottom: 50px !important;
+}
+.agntix-light .crp-hero-subtitle .tp-section-subtitle-teko {
+    color:#fff !important;
+}
