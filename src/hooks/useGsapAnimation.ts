@@ -1,3 +1,5 @@
+"use client";
+
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import gsap from 'gsap';
@@ -1199,3 +1201,5 @@ export const brandImgAnim = () => {
     }
   })
 }
+export { ScrollTrigger };
+

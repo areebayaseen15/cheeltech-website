@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
     return config;
   },
 
+  // 👇 Add this images configuration
   images: {
     remotePatterns: [
       {
@@ -20,4 +21,5 @@ const nextConfig: NextConfig = {
     ],
   },
 };
+
 export default nextConfig;

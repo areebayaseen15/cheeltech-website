@@ -1,68 +1,71 @@
-"use client"
-import { eyeAnimation, fadeAnimation, panelAnimation } from '@/hooks/useGsapAnimation';
-import CorporateAgencyBannerTwo from '@/components/banner/CorporateAgencyBannerTwo';
-import CorporateAgencyService from '@/components/service/CorporateAgencyService';
-import CorporateAgencyAbout from '@/components/about/CorporateAgencyAbout';
-import AboutStartupHero from '@/components/hero-banner/AboutStartupHero';
-import { useCursorAndBackground } from '@/hooks/useCursorAndBackground';
-import BackToTop from '@/components/shared/BackToTop/BackToTop';
-import SearchArea from '@/components/search-area/SearchArea';
-import useScrollSmooth from '@/hooks/useScrollSmooth';
-import { useGSAP } from '@gsap/react';
-import React from 'react';
-import ITSolutionFooter from '@/layouts/footers/ITSolutionFooter';
-import ITSolutionHeader from '@/layouts/headers/ITSolutionHeader';
-import HomeMainWork from '@/components/work/HomeMainWork';
-import AboutBenifit from '@/components/benefits/aboutBenefit';
-import ITSolutionBrandThree from '@/components/brand/itsolutionbrandthree';
+"use client";
+
+import React from "react";
+
+// Components
+import CorporateAgencyBannerTwo from "@/components/banner/CorporateAgencyBannerTwo";
+import CorporateAgencyService from "@/components/service/CorporateAgencyService";
+import CorporateAgencyAbout from "@/components/about/CorporateAgencyAbout";
+import AboutStartupHero from "@/components/hero-banner/AboutStartupHero";
+import BackToTop from "@/components/shared/BackToTop/BackToTop";
+import SearchArea from "@/components/search-area/SearchArea";
+import ITSolutionFooter from "@/layouts/footers/ITSolutionFooter";
+import ITSolutionHeader from "@/layouts/headers/ITSolutionHeader";
+import HomeMainWork from "@/components/work/HomeMainWork";
+import AboutBenifit from "@/components/benefits/aboutBenefit";
+import ITSolutionBrandThree from "@/components/brand/itsolutionbrandthree";
+
+// Hooks
+import { useCursorAndBackground } from "@/hooks/useCursorAndBackground";
+import useScrollSmooth from "@/hooks/useScrollSmooth";
+import { useGSAP } from "@gsap/react";
+import { fadeAnimation, panelAnimation, eyeAnimation } from "@/hooks/useGsapAnimation";
 
 const AboutStartupMain = () => {
-    //Background Color & Cursor Class
-    useCursorAndBackground();
+  // Background and cursor effect
+  useCursorAndBackground();
 
-    // Initialize all animations and effects
-    useScrollSmooth();
+  // Smooth scroll
+  useScrollSmooth();
 
-    useGSAP(() => {
-        const timer = setTimeout(() => {
-            fadeAnimation();
-            panelAnimation();
-            eyeAnimation();
-        }, 100)
-        return () => clearTimeout(timer);
-    });
+  // GSAP animations — use directly in useGSAP, no nested useEffect
+  useGSAP(() => {
+    const timer = setTimeout(() => {
+      fadeAnimation();
+      panelAnimation();
+      eyeAnimation();
+    }, 100);
+    return () => clearTimeout(timer);
+  });
 
-    return (
-        <>
-            {/* -- Begin magic cursor -- */}
-            <div id="magic-cursor">
-                <div id="ball"></div>
-            </div>
+  return (
+    <>
+      {/* Magic Cursor */}
+      <div id="magic-cursor">
+        <div id="ball"></div>
+      </div>
 
-            {/* Global Components */}
-            <BackToTop />
-            <SearchArea />
-            {/* <CorporateAgencyHeader /> */}
-            <ITSolutionHeader />
+      {/* Global Components */}
+      <BackToTop />
+      <SearchArea />
+      <ITSolutionHeader />
 
-            <div id="smooth-wrapper">
-                <div id="smooth-content">
-                    <main>
-                        <AboutStartupHero />
-                        <CorporateAgencyBannerTwo />
-                        <CorporateAgencyAbout />
-                         <ITSolutionBrandThree />
-                        {/* <CorporateAgencyBrand /> */}
-                        <CorporateAgencyService />
-                          <HomeMainWork />
-                          <AboutBenifit/>
-
-                    </main>
-                     <ITSolutionFooter />
-                </div>
-            </div>
-        </>
-    );
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <main>
+            <AboutStartupHero />
+            <CorporateAgencyBannerTwo />
+            <CorporateAgencyAbout />
+            <ITSolutionBrandThree />
+            <CorporateAgencyService />
+            <HomeMainWork />
+            <AboutBenifit />
+          </main>
+          <ITSolutionFooter />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default AboutStartupMain;
