@@ -1,35 +1,9 @@
 import benifitsShape from '../../../public/assets/img/home-11/feature/benifits-shape.png';
-import { GrowthChartIcon, CostSavingsIcon, PerformanceIcon } from '@/svg/BenefitsIcons';
-import { BenefitItemDT } from '@/types/custom-d-t';
+
 import Image from 'next/image';
 import React from 'react';
 
 const AboutBenifit = () => {
-
-    // Create benefits data array
-    // const benefitsData: BenefitItemDT[] = [
-    //     {
-    //         id: 1,
-    //         icon: <GrowthChartIcon />,
-    //         title: "Grow your business",
-    //         description: "We believe in challenges and so we have made challenges.",
-    //         link: "#"
-    //     },
-    //     {
-    //         id: 2,
-    //         icon: <CostSavingsIcon />,
-    //         title: "Cost savings ideas",
-    //         description: "We believe in challenges and so we have made challenges.",
-    //         link: "#"
-    //     },
-    //     {
-    //         id: 3,
-    //         icon: <PerformanceIcon />,
-    //         title: "Boost performance",
-    //         description: "We believe in challenges and so we have made challenges.",
-    //         link: "#"
-    //     }
-    // ];
 
     return (
         <div className="it-benifit-area p-relative pt-120 pb-120">
