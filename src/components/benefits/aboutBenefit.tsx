@@ -1,7 +1,8 @@
+import React from 'react';
 import benifitsShape from '../../../public/assets/img/home-11/feature/benifits-shape.png';
 
 import Image from 'next/image';
-import React from 'react';
+
 
 const AboutBenifit = () => {
 
